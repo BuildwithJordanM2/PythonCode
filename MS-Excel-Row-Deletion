@@ -1,0 +1,11 @@
+from openpyxl import load_workbook
+
+# Load the workbook
+workbook = load_workbook(r'C:\Users\MCJ3MTP\Downloads\Fastenal Price Hold Report 11.04.24 Practice Copy.xlsx')  # Using a raw string
+sheet1 = workbook.active  # You can also specify a sheet by name: workbook['SheetName']
+
+# Delete row 5
+sheet1.delete_rows(5)  # Use sheet1 instead of sheet
+
+# Save the workbook
+workbook.save(r'C:\Users\MCJ3MTP\Downloads\Fastenal Price Hold Report 11.04.24 Practice Copy2.xlsx')  # Using a raw string
