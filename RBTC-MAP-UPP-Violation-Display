@@ -1,0 +1,17 @@
+
+import openpyxl
+from openpyxl import Workbook
+
+# Load the workbook
+wb = openpyxl.load_workbook(r'C:\Users\MCJ3MTP\Downloads\Violations60.xlsx')
+
+# Get the active sheet
+sh1 = wb.active
+
+# Print the title of the active sheet
+print("Active sheet title:", sh1.title)  # Use straight quotes
+
+# Print the values of the first row
+for row in sh1.iter_rows(values_only=True):
+    print(row)  # Indented correctly
+    break  # Remove this line if you want to print all rows
