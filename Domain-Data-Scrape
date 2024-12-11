@@ -1,0 +1,31 @@
+import requests
+from bs4 import BeautifulSoup
+
+# Function to fetch and extract text from a URL
+def fetch_text_from_url(url):
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
+    }
+    
+    # Send an HTTP GET request to the URL with custom headers
+    response = requests.get(url, headers=headers)
+    
+    # Debugging: print the status code
+    print(f"Status Code: {response.status_code}")
+    
+    # Check if the request was successful (status code 200)
+    if response.status_code == 200:
+        # Parse the HTML content using BeautifulSoup
+        soup = BeautifulSoup(response.content, 'html.parser')
+        
+        # Extract all text from the HTML
+        text = soup.get_text()
+        
+        return text
+    else:
+        return f"Failed to retrieve content, status code: {response.status_code}"
+
+# Example usage:
+url = "https://www.1toptools.com/products/jobox-36"
+text = fetch_text_from_url(url)
+print(text)
