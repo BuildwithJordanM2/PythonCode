@@ -2,13 +2,13 @@ import win32com.client
 
 # Create an instance of Excel
 excel = win32com.client.Dispatch('Excel.Application')
-excel.Visible = True  # Set to False if you don't want to see Excel
+excel.Visible = False  # Set to True if you want to see Excel
 
-# Open the workbook
-workbook = excel.Workbooks.Open(r'C:\Users\MCJ3MTP\Downloads\White Cap Price Hold Report 11.04.24.xlsx')
+# Open the workbook (Replace with a generic path)
+workbook = excel.Workbooks.Open(r'C:\path\to\your\file.xlsx')
 
-# Run the macro
-excel.Application.Run('PERSONAL.XLSB!Macro1')
+# Run the macro (Replace with a generic macro name)
+excel.Application.Run('PERSONAL.XLSB!YourMacroName')
 
 # Save and close
 workbook.Save()
