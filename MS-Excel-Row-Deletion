@@ -1,11 +1,13 @@
 from openpyxl import load_workbook
 
-# Load the workbook
-workbook = load_workbook(r'C:\Users\MCJ3MTP\Downloads\Fastenal Price Hold Report 11.04.24 Practice Copy.xlsx')  # Using a raw string
+# Load the workbook (Replace with a generic file path)
+workbook = load_workbook(r'C:\path\to\your\spreadsheet.xlsx')
+
+# Get the active sheet
 sheet1 = workbook.active  # You can also specify a sheet by name: workbook['SheetName']
 
 # Delete row 5
-sheet1.delete_rows(5)  # Use sheet1 instead of sheet
+sheet1.delete_rows(5)
 
-# Save the workbook
-workbook.save(r'C:\Users\MCJ3MTP\Downloads\Fastenal Price Hold Report 11.04.24 Practice Copy2.xlsx')  # Using a raw string
+# Save the modified workbook (Use a generic filename)
+workbook.save(r'C:\path\to\your\modified_spreadsheet.xlsx')
