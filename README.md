@@ -34,7 +34,3 @@ The purpose of this repository is to:
 5. **Excel Data Display**:
    - Python scripts for printing rows and columns of an Excel file in a readable format.
 
-## How to Use
-1. Clone this repository to your local machine:
-   ```bash
-   git clone https://github.com/your-username/python-scripts-portfolio.git
