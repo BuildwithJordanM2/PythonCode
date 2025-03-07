@@ -12,7 +12,7 @@ The purpose of this repository is to:
 
 ## Key Features
 - **Excel Row Management**:
-  - Create and delete rows dynamically in Excel files.
+  - Create, delete, and change rows dynamically in Excel files.
 - **Macros Automation**:
   - Use Python to trigger and manage Excel macros for complex tasks.
 - **Address Standardization**:
@@ -33,4 +33,6 @@ The purpose of this repository is to:
    - Scripts for extracting domain-specific data.
 5. **Excel Data Display**:
    - Python scripts for printing rows and columns of an Excel file in a readable format.
+6. **Row Operations Scripts**:
+   - Python scripts for changing string row names of data (ex: Sent to Python Change).
 
