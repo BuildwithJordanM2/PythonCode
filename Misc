@@ -1,0 +1,32 @@
+from openpyxl import load_workbook
+from datetime import datetime
+
+# Define month mapping
+date_mapping = {
+    "01": "January", "02": "February", "03": "March", "04": "April",
+    "05": "May", "06": "June", "07": "July", "08": "August",
+    "09": "September", "10": "October", "11": "November", "12": "December"
+}
+
+def convert_date_format(date_str):
+    try:
+        dt = datetime.strptime(date_str, "%m/%d/%y %I:%M%p")  # Convert to datetime object
+        month_year = f"{date_mapping[dt.strftime('%m')]} {dt.strftime('%Y')}"
+        return month_year
+    except ValueError:
+        return "Invalid Date"
+
+# Load workbook
+file_path = r"C:\Users\Username\Downloads\Book2.xlsx"  # Use raw string or double backslashes
+wb = load_workbook(file_path)
+sheet = wb.active  # Modify if needed
+
+# Loop through rows and update format
+for row in sheet.iter_rows(min_row=2, max_row=sheet.max_row, min_col=1, max_col=1):  # Adjust column if needed
+    for cell in row:
+        if cell.value and isinstance(cell.value, str):  # Ensure it's not None before processing
+            cell.value = convert_date_format(cell.value)
+
+# Save workbook
+wb.save(r"C:\Users\Username\Downloads\Book3.xlsx")  # Use raw string or double backslashes
+print("Date format conversion complete. Saved as 'Book3.xlsx'.")
