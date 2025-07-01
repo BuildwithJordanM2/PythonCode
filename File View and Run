@@ -1,0 +1,34 @@
+When using Microsoft Windows, use the steps below to run Script/Code which will assist in running it in the background and display all files in a specific folder view.
+1. Open Command Prompt
+Press Win + R, type cmd, and press Enter.
+2. Navigate to the Downloads Folder
+Type the following command and press Enter:
+
+cmd
+cd %USERPROFILE%\Downloads
+This command takes you directly to your Downloads folder, no matter your username.
+
+3. Check That Your Script Is There
+Type:
+
+cmd
+dir
+Look for TimeSavedCalculator.py in the list.
+
+4. Run Your Script
+Type:
+
+cmd
+python TimeSavedCalculator.py
+If you have both Python 2 and 3 installed, use:
+
+cmd
+python3 TimeSavedCalculator.py
+5. Follow the Prompts
+The script will now ask for your input, one question at a time.
+
+Summary of Commands
+cmd
+cd %USERPROFILE%\Downloads
+dir
+python TimeSavedCalculator.py
